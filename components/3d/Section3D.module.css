@@ -1,0 +1,5 @@
+.section3d {
+  position: relative;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+}

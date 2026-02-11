@@ -1,0 +1,414 @@
+/* Global reset for this module */
+.heroContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh; /* Dynamic viewport height for mobile */
+  background: #050505;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.heroWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.heroSection {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== Retro Grid Background ===== */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    #050505 0%,
+    #050505 50%,
+    #0a0a0a 65%,
+    #0d1a00 100%
+  );
+}
+
+/* Horizon glow line - hidden */
+.horizonGlow {
+  display: none;
+}
+
+/* Sun/circle - hidden */
+.retroSun {
+  display: none;
+}
+
+/* Sky grid - hidden */
+.skyGrid {
+  display: none;
+}
+
+/* Perspective grid floor — narrow at horizon, expanding to full screen */
+.gridOverlay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: 300vw;
+  height: 120vh;
+  transform: translateX(-50%) perspective(150px) rotateX(65deg);
+  transform-origin: 50% 0%;
+  background-image:
+    linear-gradient(rgba(192, 255, 0, 0.2) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(192, 255, 0, 0.2) 1.5px, transparent 1.5px);
+  background-size: 100px 100px;
+  animation: gridMove 5s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100px;
+  }
+}
+
+/* Subtle vignette for depth */
+.heroBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center bottom,
+    transparent 50%,
+    #050505 95%
+  );
+  pointer-events: none;
+}
+
+/* Glow orbs for ambient lighting */
+.glowOrb1,
+.glowOrb2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  will-change: transform;
+  z-index: 1;
+}
+
+.glowOrb1 {
+  width: clamp(200px, 40vw, 500px);
+  height: clamp(200px, 40vw, 500px);
+  background: radial-gradient(
+    circle,
+    rgba(192, 255, 0, 0.3) 0%,
+    transparent 70%
+  );
+  top: 30%;
+  left: -5%;
+  animation: floatOrb1 12s ease-in-out infinite;
+}
+
+.glowOrb2 {
+  width: clamp(200px, 35vw, 450px);
+  height: clamp(200px, 35vw, 450px);
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 136, 0.2) 0%,
+    transparent 70%
+  );
+  top: 35%;
+  right: -5%;
+  animation: floatOrb2 15s ease-in-out infinite;
+}
+
+/* Remove unused glowOrb3 */
+.glowOrb3 {
+  display: none;
+}
+
+@keyframes floatOrb1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, 20px) scale(1.1);
+  }
+}
+
+@keyframes floatOrb2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-30px, -15px) scale(1.05);
+  }
+}
+
+/* Mobile responsive grid adjustments */
+@media (max-width: 768px) {
+  .gridOverlay {
+    width: 500vw;
+    height: 55vh;
+  }
+}
+
+.contentWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  height: 100%; /* Full height */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+  z-index: 10;
+  position: relative;
+}
+
+/* --- Left Side: Text --- */
+.textContent {
+  flex: 1;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.greeting {
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.name {
+  font-family: var(--font-teko); /* New aggressive font */
+  font-size: clamp(3rem, 10vw, 8rem); /* Adjusted for better mobile scaling */
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  /* font-style: italic; Removed for straight look */
+}
+
+.typewriterWrapper {
+  margin-top: 1rem;
+  font-family: var(--font-inter);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.5; /* Ensure consistent height for alignment */
+}
+
+.designationDynamic {
+  color: #c0ff00; /* Neon Green */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rotatingTextContainer {
+  display: inline-grid;
+  vertical-align: middle;
+  height: 1.5em;
+  overflow: hidden;
+  text-align: left;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background-color: #fff;
+}
+.cursorBlink {
+  opacity: 0;
+}
+
+.description {
+  margin-top: 2rem;
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.btnPrimary,
+.btnSecondary {
+  padding: 0.8rem 2rem;
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btnPrimary {
+  background: #c0ff00;
+  color: #000; /* Black text for contrast */
+  border: none;
+}
+.btnPrimary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px rgba(192, 255, 0, 0.4);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #c0ff00;
+  text-decoration: none; /* Remove underline for anchor tag */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btnSecondary:hover {
+  background: rgba(192, 255, 0, 0.1);
+  transform: translateY(-3px);
+}
+
+.downloadIcon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.btnSecondary:hover .downloadIcon {
+  transform: translateY(3px); /* Icon moves down on hover */
+}
+
+/* Processing State */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.processing {
+  opacity: 0.8;
+  cursor: wait;
+}
+
+.downloaded {
+  border-color: #00ff88; /* Success Green */
+  color: #00ff88;
+}
+
+.downloaded:hover {
+  background: rgba(0, 255, 136, 0.1);
+  transform: none;
+}
+
+.socialsWrapper {
+  margin-top: 3rem;
+}
+
+/* --- Right Side: 3D Scene - REMOVED --- */
+/* .graphicContent was here */
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .heroSection {
+    padding: 0 1rem;
+  }
+  .contentWrapper {
+    flex-direction: column-reverse;
+    height: auto;
+    padding-top: 6rem; /* Reduced Navbar space for mobile */
+    padding-bottom: 2rem;
+    width: 100%;
+    overflow: hidden; /* Prevent horizontal scroll */
+  }
+  .textContent {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+  .typewriterWrapper {
+    flex-direction: column; /* Stack vertically on mobile */
+    font-size: 1.2rem;
+    gap: 0.2rem;
+  }
+  .designationDynamic {
+    font-size: 1.5rem; /* Ensure it fits */
+    white-space: normal; /* Allow wrap if absolutely needed, though alignment might suffer */
+    text-align: center;
+  }
+  .rotatingTextContainer {
+    height: auto; /* Allow dynamic height on mobile if wrapping */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  .graphicContent {
+    width: 100%;
+    min-height: 400px;
+  }
+  .ctaButtons {
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to stack if screen is tiny */
+  }
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%; /* Full width buttons on mobile */
+    max-width: 300px;
+    padding: 0.8rem 1rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .name {
+    font-size: 3rem; /* Force smaller name on very small screens */
+  }
+  .designationDynamic {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,53 @@
+/* Global reset for this module */
+.container {
+  position: relative;
+  width: 100%;
+  overflow: visible; /* Allow scrolling */
+  background: #111; /* Dark background revealed on scroll */
+}
+
+/* Background Wrapper (White initially) */
+.whiteSection {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background: white;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Image Container that shrinks */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: white; /* Matches seamless background */
+  transform-origin: center center;
+  /* Will be animated by GSAP */
+}
+
+/* Grid Layout for the "shrunk" state text */
+.revealedText {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  z-index: 5; /* Behind imageWrapper initially, but visual hierarchy matters */
+}
+
+.giantType {
+  font-family: var(--font-oswald);
+  font-size: 15vw;
+  color: #cbf250;
+  line-height: 0.8;
+  text-transform: uppercase;
+}

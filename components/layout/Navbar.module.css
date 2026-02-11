@@ -1,0 +1,185 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: center;
+  z-index: 1002; /* Ensure it stays on top of overlay (1001) */
+  background: transparent; /* Default transparent */
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+.scrolled {
+  background: #000000; /* Pitch black */
+  backdrop-filter: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 4rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); /* Explicit box shadow */
+}
+
+.logo {
+  font-family: var(--font-oswald);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* Navigation Tabs */
+.navLinks {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.navItem {
+  font-family: var(--font-inter);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navItem:hover {
+  color: #fff;
+}
+
+/* Underline effect on hover */
+.navItem::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #c0ff00;
+  transition: width 0.3s ease;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}
+
+/* Right Buttons Removed */
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Menu Button */
+/* Menu Button */
+.menuButton {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1002; /* Above overlay */
+  transition: all 0.3s ease;
+  border-radius: 12px; /* Soft square Look */
+}
+
+.menuButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #c0ff00;
+}
+
+.menuIcon {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6); /* Bouncy 3D effect */
+  transform-style: preserve-3d;
+}
+
+.line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.5s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.menuButton:hover .line {
+  background-color: #c0ff00;
+}
+
+/* Open State Animation */
+.open {
+  transform: rotate(180deg);
+}
+
+.open .line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+.open .line:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.menuButton:hover {
+  color: #c0ff00;
+}
+
+/* Fullscreen Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 1001; /* Below button/logo, above everything else */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none; /* Initially hidden */
+}
+
+.overlayContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.overlayLink {
+  font-family: var(--font-oswald);
+  font-size: 2.5rem; /* Reduced from 4rem */
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+
+.overlayLink:hover {
+  color: #c0ff00;
+  -webkit-text-stroke: 1px #c0ff00;
+}
+
+/* Hide original nav links */
+.navLinks {
+  display: none;
+}
