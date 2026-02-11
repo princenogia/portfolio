@@ -47,7 +47,7 @@
 .giantType {
   font-family: var(--font-oswald);
   font-size: 15vw;
-  color: #cbf250;
+  color: var(--accent);
   line-height: 0.8;
   text-transform: uppercase;
 }

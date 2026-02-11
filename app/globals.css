@@ -1,7 +1,8 @@
 :root {
   --background: #000000; /* Deep black */
   --foreground: #ffffff;
-  --accent: #cbf250; /* Lando Neon */
+  --accent: #8b5cf6; /* Purple */
+  --accent-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 100%);
   --gray: #888888;
 }
 

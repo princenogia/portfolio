@@ -62,7 +62,7 @@
   left: 0;
   width: 0%;
   height: 2px;
-  background: #c0ff00;
+  background: var(--accent);
   transition: width 0.3s ease;
 }
 
@@ -97,7 +97,7 @@
 
 .menuButton:hover {
   background: rgba(255, 255, 255, 0.1);
-  border-color: #c0ff00;
+  border-color: var(--accent);
 }
 
 .menuIcon {
@@ -121,7 +121,7 @@
 }
 
 .menuButton:hover .line {
-  background-color: #c0ff00;
+  background-color: var(--accent);
 }
 
 /* Open State Animation */
@@ -137,7 +137,7 @@
 }
 
 .menuButton:hover {
-  color: #c0ff00;
+  color: var(--accent);
 }
 
 /* Fullscreen Overlay */
@@ -175,8 +175,8 @@
 }
 
 .overlayLink:hover {
-  color: #c0ff00;
-  -webkit-text-stroke: 1px #c0ff00;
+  color: var(--accent);
+  -webkit-text-stroke: 1px var(--accent);
 }
 
 /* Hide original nav links */

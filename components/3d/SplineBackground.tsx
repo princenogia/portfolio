@@ -55,7 +55,7 @@ function SceneContent() {
         intensity={4}
         color="#ffffff"
       />
-      <pointLight position={[-5, -5, -5]} intensity={2} color="#c0ff00" />{" "}
+      <pointLight position={[-5, -5, -5]} intensity={2} color="#8B5CF6" />{" "}
       {/* Violet Rim */}
       {/* Hero Object */}
       <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>

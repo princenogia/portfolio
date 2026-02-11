@@ -67,8 +67,8 @@
   transform: translateX(-50%) perspective(150px) rotateX(65deg);
   transform-origin: 50% 0%;
   background-image:
-    linear-gradient(rgba(192, 255, 0, 0.2) 1.5px, transparent 1.5px),
-    linear-gradient(90deg, rgba(192, 255, 0, 0.2) 1.5px, transparent 1.5px);
+    linear-gradient(rgba(139, 92, 246, 0.2) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.2) 1.5px, transparent 1.5px);
   background-size: 100px 100px;
   animation: gridMove 5s linear infinite;
 }
@@ -111,7 +111,7 @@
   height: clamp(200px, 40vw, 500px);
   background: radial-gradient(
     circle,
-    rgba(192, 255, 0, 0.3) 0%,
+    rgba(139, 92, 246, 0.3) 0%,
     transparent 70%
   );
   top: 30%;
@@ -124,7 +124,7 @@
   height: clamp(200px, 35vw, 450px);
   background: radial-gradient(
     circle,
-    rgba(0, 255, 136, 0.2) 0%,
+    rgba(59, 130, 246, 0.2) 0%,
     transparent 70%
   );
   top: 35%;
@@ -224,7 +224,7 @@
 }
 
 .designationDynamic {
-  color: #c0ff00; /* Neon Green */
+  color: var(--accent); /* Purple */
   font-weight: 600;
   white-space: nowrap;
 }
@@ -278,19 +278,19 @@
 }
 
 .btnPrimary {
-  background: #c0ff00;
+  background: var(--accent);
   color: #000; /* Black text for contrast */
   border: none;
 }
 .btnPrimary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 25px rgba(192, 255, 0, 0.4);
+  box-shadow: 0 5px 25px rgba(139, 92, 246, 0.4);
 }
 
 .btnSecondary {
   background: transparent;
   color: #fff;
-  border: 2px solid #c0ff00;
+  border: 2px solid var(--accent);
   text-decoration: none; /* Remove underline for anchor tag */
   display: inline-flex;
   align-items: center;
@@ -298,7 +298,7 @@
   gap: 0.5rem;
 }
 .btnSecondary:hover {
-  background: rgba(192, 255, 0, 0.1);
+  background: rgba(139, 92, 246, 0.1);
   transform: translateY(-3px);
 }
 

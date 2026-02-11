@@ -49,7 +49,7 @@ function RoomSetup() {
           <planeGeometry args={[1.5, 0.9]} />
           <meshStandardMaterial
             color="#000"
-            emissive="#c0ff00"
+            emissive="#8B5CF6"
             emissiveIntensity={0.08}
           />
         </mesh>
@@ -87,9 +87,9 @@ function RoomSetup() {
         <mesh position={[1.8, 1, 0]}>
           <icosahedronGeometry args={[0.15, 0]} />
           <meshStandardMaterial
-            color="#c0ff00"
+            color="#8B5CF6"
             wireframe
-            emissive="#c0ff00"
+            emissive="#8B5CF6"
             emissiveIntensity={0.5}
           />
         </mesh>
@@ -114,7 +114,7 @@ export default function ContactScene() {
       <Canvas camera={{ position: [0, 1, 4], fov: 45 }} gl={{ alpha: true }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1.5} />
-        <pointLight position={[-3, 2, 2]} intensity={2} color="#c0ff00" />
+        <pointLight position={[-3, 2, 2]} intensity={2} color="#8B5CF6" />
         <RoomSetup />
       </Canvas>
     </div>

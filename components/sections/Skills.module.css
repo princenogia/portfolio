@@ -38,7 +38,7 @@
 }
 
 .highlight {
-  color: #c0ff00;
+  color: var(--accent);
   position: relative;
   display: inline-block;
 }
@@ -50,7 +50,7 @@
   left: 0;
   width: 100%;
   height: 4px;
-  background: #c0ff00;
+  background: var(--accent);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
@@ -157,7 +157,7 @@
 }
 
 .skillItem:hover {
-  background: #c0ff00; /* Border hover color */
+  background: var(--accent); /* Border hover color */
   transform: translateY(-5px) scale(1.1);
   z-index: 100; /* Ensure strictly on top */
   box-shadow: none;
@@ -179,8 +179,8 @@
 }
 
 .skillItem:hover .iconWrapper {
-  color: #c0ff00;
-  filter: drop-shadow(0 0 10px rgba(192, 255, 0, 0.3));
+  color: var(--accent);
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
   transform: scale(1.1);
 }
 

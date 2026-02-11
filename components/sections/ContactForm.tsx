@@ -98,12 +98,12 @@ const ContactForm = () => {
                       width: "80px",
                       height: "80px",
                       borderRadius: "50%",
-                      background: "#c0ff00",
+                      background: "#8B5CF6",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       marginBottom: "1.5rem",
-                      boxShadow: "0 0 20px rgba(192, 255, 0, 0.4)",
+                      boxShadow: "0 0 20px rgba(139, 92, 246, 0.4)",
                     }}
                   >
                     <svg

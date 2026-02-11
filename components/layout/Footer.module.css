@@ -32,9 +32,9 @@
 }
 
 .socialLink:hover {
-  color: #c0ff00;
+  color: var(--accent);
   transform: translateY(-3px);
-  filter: drop-shadow(0 0 10px rgba(192, 255, 0, 0.4));
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.4));
 }
 
 .copyright {

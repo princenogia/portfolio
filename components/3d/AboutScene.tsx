@@ -26,10 +26,10 @@ function UserIcon3D() {
         <mesh position={[0, 0.8, 0]}>
           <sphereGeometry args={[0.6, 32, 32]} />
           <meshStandardMaterial
-            color="#c0ff00"
+            color="#8B5CF6"
             metalness={0.8}
             roughness={0.2}
-            emissive="#c0ff00"
+            emissive="#8B5CF6"
             emissiveIntensity={0.2}
           />
         </mesh>
@@ -51,8 +51,8 @@ function UserIcon3D() {
         <mesh rotation={[Math.PI / 3, 0, 0]}>
           <torusGeometry args={[1.6, 0.05, 16, 100]} />
           <meshStandardMaterial
-            color="#c0ff00"
-            emissive="#c0ff00"
+            color="#8B5CF6"
+            emissive="#8B5CF6"
             emissiveIntensity={0.5}
           />
         </mesh>
@@ -67,7 +67,7 @@ export default function AboutScene() {
       <Canvas dpr={[1, 2]} gl={{ alpha: true }}>
         <PerspectiveCamera makeDefault position={[0, 0, 6]} />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#c0ff00" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#8B5CF6" />
         <spotLight
           position={[-10, 10, 5]}
           angle={0.3}
