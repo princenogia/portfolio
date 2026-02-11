@@ -17,7 +17,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Creative Developer",
+  title: "Prince Nogia",
   description: "Immersive 3D Portfolio with modern design",
   icons: {
     icon: "/favicon.png",
