@@ -241,25 +241,51 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .experienceSection {
-    padding: 6rem 1.5rem;
+    padding: 4rem 1rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
   }
 
   .timelineLine,
   .timelineLineBg {
-    left: 20px;
+    left: 10px;
     transform: none;
   }
 
   .timelineItem {
     justify-content: flex-start !important;
-    padding-left: 50px;
+    padding-left: 35px; /* Reduced from 50px to give more space to content */
+    padding-right: 0;
   }
 
   .timelineContent {
     width: 100%;
+    padding: 1.5rem; /* Reduced padding */
   }
 
   .timelineDot {
-    left: 20px;
+    left: 10px;
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+
+  .role {
+    font-size: 1.5rem;
+  }
+
+  .tagsTitle {
+    font-size: 0.8rem;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
   }
 }

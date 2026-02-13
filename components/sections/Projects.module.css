@@ -267,6 +267,10 @@
   }
   .overlayContent {
     padding: 2rem;
+    max-height: 85vh; /* Limit height */
+    overflow-y: auto; /* Enable scrolling */
+    display: flex;
+    flex-direction: column;
   }
 }
 

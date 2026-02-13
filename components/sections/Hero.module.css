@@ -303,12 +303,12 @@
 }
 
 .downloadIcon {
-  font-size: 1.2rem;
+  font-size: 1rem;
   transition: transform 0.3s ease;
 }
 
 .btnSecondary:hover .downloadIcon {
-  transform: translateY(3px); /* Icon moves down on hover */
+  /* transform: translateY(3px) !important; Removed to sync with text */
 }
 
 /* Processing State */

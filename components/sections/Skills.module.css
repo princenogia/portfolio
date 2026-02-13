@@ -338,9 +338,27 @@
     margin-top: -1rem !important;
   }
 
-  /* Reset hover transforms for mobile */
-  .skillItem:hover {
-    transform: none !important;
+  /* Reset hover transforms for mobile - BUT keep the translateX offset for row 1 & 3 */
+  .skillItem:nth-child(1):hover,
+  .skillItem:nth-child(2):hover,
+  .skillItem:nth-child(3):hover,
+  .skillItem:nth-child(8):hover,
+  .skillItem:nth-child(9):hover,
+  .skillItem:nth-child(10):hover {
+    transform: translateX(calc(50% + 0.25rem)) translateY(-5px) scale(1.1) !important;
+    z-index: 100;
+  }
+
+  .skillItem:nth-child(4):hover,
+  .skillItem:nth-child(5):hover,
+  .skillItem:nth-child(6):hover,
+  .skillItem:nth-child(7):hover,
+  .skillItem:nth-child(11):hover,
+  .skillItem:nth-child(12):hover,
+  .skillItem:nth-child(13):hover,
+  .skillItem:nth-child(14):hover {
+    transform: translateY(-5px) scale(1.1) !important;
+    z-index: 100;
   }
 
   .iconWrapper {
